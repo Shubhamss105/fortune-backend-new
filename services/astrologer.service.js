@@ -96,16 +96,13 @@ const addNewAstrologer = async (body, files) => {
     const idProofImage = await uploadOnCloudinary(idProofImagePath);
     const galleryImageUrls = await Promise.all(galleryImages.map(uploadOnCloudinary));
     const galleryImg = galleryImageUrls.map((img) => img.url);
-    if (!profileImage) {
-        throw new ApiError(400, "profileImage file is required")
-    }
-    if (!idProofImage) {
-        throw new ApiError(400, "idProofImage file is required")
-    }
+    // if (!profileImage) {
+    //     throw new ApiError(400, "profileImage file is required")
+    // }
+    // if (!idProofImage) {
+    //     throw new ApiError(400, "idProofImage file is required")
+    // }
 
-    // Check if the astrologer already exists
-
-    // Create a new astrologer entry
     const newAstrologer = new Astrologer({
         displayName,
         name,
